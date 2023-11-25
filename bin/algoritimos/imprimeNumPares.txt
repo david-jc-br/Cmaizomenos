@@ -1,0 +1,27 @@
+:DEC
+
+    Int cont;
+
+:PRG
+
+    cont = 0;
+    limite = 100;
+
+    uai(cont <= limite) {
+        Mostraissu("Numeros pareres de 0 a 100\n");
+
+        DE((cont / 2) == 0){
+            Mostraissu(cont);
+            Mostraissu(" \n");
+        }
+
+        cont = cont + 2 
+    }
+    *&(#$&@)
+    (&#^%)(!@^$)(
+    *!&%)(*@
+    #ååååååå
+    åååå)
+    dsfgsdfgsdsmkerjwiotugnhs dfoipjugbnhseopiur tghw0e89orughow8i9usae rhgwe
+    sadfgkosrjtpo iwe
+ååäéðáßð®þéü®þüú
