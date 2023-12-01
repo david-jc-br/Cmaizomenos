@@ -72,3 +72,9 @@ expressaoAritReal:
   | expressaoAritReal OpArit expressaoAritReal;
 
 
+// Adicione a regra para tratar variáveis não declaradas
+ErroVariavelNaoDeclarada: Var Atribuicao {
+    String variavel = getText();
+    System.err.println("Erro léxico: Tentativa de atribuir valor a uma variável não declarada: '" + variavel + "' na posição " + getCharPositionInLine());
+    // Aqui, você pode adicionar lógica adicional, como lançar uma exceção, se desejar
+};

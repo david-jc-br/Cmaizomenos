@@ -21,6 +21,7 @@ NInt=20
 NReal=21
 LString=22
 ErrorChar=23
+ErroVariavelNaoDeclarada=24
 ';'=1
 'si'=2
 'sinaum'=3

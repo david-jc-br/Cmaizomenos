@@ -19,7 +19,7 @@ public class CmzmLangParser extends Parser {
 		T__0=1, T__1=2, T__2=3, T__3=4, PalavraChave=5, Tipo=6, OpArit=7, Atribuicao=8, 
 		OpRel=9, AbreChave=10, FechaChave=11, AbrePar=12, FechaPar=13, AbreComentario=14, 
 		FechaComentario=15, OpBoolE=16, OpBoolOu=17, WS=18, Var=19, NInt=20, NReal=21, 
-		LString=22, ErrorChar=23;
+		LString=22, ErrorChar=23, ErroVariavelNaoDeclarada=24;
 	public static final int
 		RULE_comando = 0, RULE_expressao = 1, RULE_declaracaoVar = 2, RULE_condicional = 3, 
 		RULE_repeticao = 4, RULE_expressaoLogica = 5, RULE_expressaoLogicaString = 6, 
@@ -48,7 +48,7 @@ public class CmzmLangParser extends Parser {
 			null, null, null, null, null, "PalavraChave", "Tipo", "OpArit", "Atribuicao", 
 			"OpRel", "AbreChave", "FechaChave", "AbrePar", "FechaPar", "AbreComentario", 
 			"FechaComentario", "OpBoolE", "OpBoolOu", "WS", "Var", "NInt", "NReal", 
-			"LString", "ErrorChar"
+			"LString", "ErrorChar", "ErroVariavelNaoDeclarada"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -1359,7 +1359,7 @@ public class CmzmLangParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001\u0017\u00ce\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001"+
+		"\u0004\u0001\u0018\u00ce\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001"+
 		"\u0002\u0002\u0007\u0002\u0002\u0003\u0007\u0003\u0002\u0004\u0007\u0004"+
 		"\u0002\u0005\u0007\u0005\u0002\u0006\u0007\u0006\u0002\u0007\u0007\u0007"+
 		"\u0002\b\u0007\b\u0002\t\u0007\t\u0002\n\u0007\n\u0002\u000b\u0007\u000b"+

@@ -19,7 +19,7 @@ public class CmzmLangParser extends Parser {
 		T__0=1, T__1=2, T__2=3, T__3=4, PalavraChave=5, Tipo=6, OpArit=7, Atribuicao=8, 
 		OpRel=9, AbreChave=10, FechaChave=11, AbrePar=12, FechaPar=13, AbreComentario=14, 
 		FechaComentario=15, OpBoolE=16, OpBoolOu=17, WS=18, Var=19, NInt=20, NReal=21, 
-		LString=22, ErrorChar=23;
+		LString=22, ErrorChar=23, ErroVariavelNaoDeclarada=24;
 	public static final int
 		RULE_comando = 0, RULE_expressao = 1, RULE_declaracaoVar = 2, RULE_condicional = 3, 
 		RULE_repeticao = 4, RULE_expressaoLogica = 5, RULE_expressaoLogicaString = 6, 
@@ -48,7 +48,7 @@ public class CmzmLangParser extends Parser {
 			null, null, null, null, null, "PalavraChave", "Tipo", "OpArit", "Atribuicao", 
 			"OpRel", "AbreChave", "FechaChave", "AbrePar", "FechaPar", "AbreComentario", 
 			"FechaComentario", "OpBoolE", "OpBoolOu", "WS", "Var", "NInt", "NReal", 
-			"LString", "ErrorChar"
+			"LString", "ErrorChar", "ErroVariavelNaoDeclarada"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -114,6 +114,14 @@ public class CmzmLangParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_comando; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CmzmLangListener ) ((CmzmLangListener)listener).enterComando(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CmzmLangListener ) ((CmzmLangListener)listener).exitComando(this);
+		}
 	}
 
 	public final ComandoContext comando() throws RecognitionException {
@@ -170,6 +178,14 @@ public class CmzmLangParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_expressao; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CmzmLangListener ) ((CmzmLangListener)listener).enterExpressao(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CmzmLangListener ) ((CmzmLangListener)listener).exitExpressao(this);
+		}
 	}
 
 	public final ExpressaoContext expressao() throws RecognitionException {
@@ -230,6 +246,14 @@ public class CmzmLangParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_declaracaoVar; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CmzmLangListener ) ((CmzmLangListener)listener).enterDeclaracaoVar(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CmzmLangListener ) ((CmzmLangListener)listener).exitDeclaracaoVar(this);
+		}
 	}
 
 	public final DeclaracaoVarContext declaracaoVar() throws RecognitionException {
@@ -282,6 +306,14 @@ public class CmzmLangParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_condicional; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CmzmLangListener ) ((CmzmLangListener)listener).enterCondicional(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CmzmLangListener ) ((CmzmLangListener)listener).exitCondicional(this);
+		}
 	}
 
 	public final CondicionalContext condicional() throws RecognitionException {
@@ -350,6 +382,14 @@ public class CmzmLangParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_repeticao; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CmzmLangListener ) ((CmzmLangListener)listener).enterRepeticao(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CmzmLangListener ) ((CmzmLangListener)listener).exitRepeticao(this);
+		}
 	}
 
 	public final RepeticaoContext repeticao() throws RecognitionException {
@@ -405,6 +445,14 @@ public class CmzmLangParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_expressaoLogica; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CmzmLangListener ) ((CmzmLangListener)listener).enterExpressaoLogica(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CmzmLangListener ) ((CmzmLangListener)listener).exitExpressaoLogica(this);
+		}
 	}
 
 	public final ExpressaoLogicaContext expressaoLogica() throws RecognitionException {
@@ -471,6 +519,14 @@ public class CmzmLangParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_expressaoLogicaString; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CmzmLangListener ) ((CmzmLangListener)listener).enterExpressaoLogicaString(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CmzmLangListener ) ((CmzmLangListener)listener).exitExpressaoLogicaString(this);
+		}
 	}
 
 	public final ExpressaoLogicaStringContext expressaoLogicaString() throws RecognitionException {
@@ -538,6 +594,14 @@ public class CmzmLangParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_expressaoLogicaInt; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CmzmLangListener ) ((CmzmLangListener)listener).enterExpressaoLogicaInt(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CmzmLangListener ) ((CmzmLangListener)listener).exitExpressaoLogicaInt(this);
+		}
 	}
 
 	public final ExpressaoLogicaIntContext expressaoLogicaInt() throws RecognitionException {
@@ -605,6 +669,14 @@ public class CmzmLangParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_expressaoLogicaReal; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CmzmLangListener ) ((CmzmLangListener)listener).enterExpressaoLogicaReal(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CmzmLangListener ) ((CmzmLangListener)listener).exitExpressaoLogicaReal(this);
+		}
 	}
 
 	public final ExpressaoLogicaRealContext expressaoLogicaReal() throws RecognitionException {
@@ -675,6 +747,14 @@ public class CmzmLangParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_atribuicao; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CmzmLangListener ) ((CmzmLangListener)listener).enterAtribuicao(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CmzmLangListener ) ((CmzmLangListener)listener).exitAtribuicao(this);
+		}
 	}
 
 	public final AtribuicaoContext atribuicao() throws RecognitionException {
@@ -727,6 +807,14 @@ public class CmzmLangParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_atribuicaoString; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CmzmLangListener ) ((CmzmLangListener)listener).enterAtribuicaoString(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CmzmLangListener ) ((CmzmLangListener)listener).exitAtribuicaoString(this);
+		}
 	}
 
 	public final AtribuicaoStringContext atribuicaoString() throws RecognitionException {
@@ -768,6 +856,14 @@ public class CmzmLangParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_atribuicaoInt; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CmzmLangListener ) ((CmzmLangListener)listener).enterAtribuicaoInt(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CmzmLangListener ) ((CmzmLangListener)listener).exitAtribuicaoInt(this);
+		}
 	}
 
 	public final AtribuicaoIntContext atribuicaoInt() throws RecognitionException {
@@ -823,6 +919,14 @@ public class CmzmLangParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_atribuicaoReal; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CmzmLangListener ) ((CmzmLangListener)listener).enterAtribuicaoReal(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CmzmLangListener ) ((CmzmLangListener)listener).exitAtribuicaoReal(this);
+		}
 	}
 
 	public final AtribuicaoRealContext atribuicaoReal() throws RecognitionException {
@@ -887,6 +991,14 @@ public class CmzmLangParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_expressaoAritInt; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CmzmLangListener ) ((CmzmLangListener)listener).enterExpressaoAritInt(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CmzmLangListener ) ((CmzmLangListener)listener).exitExpressaoAritInt(this);
+		}
 	}
 
 	public final ExpressaoAritIntContext expressaoAritInt() throws RecognitionException {
@@ -1057,6 +1169,14 @@ public class CmzmLangParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_expressaoAritReal; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CmzmLangListener ) ((CmzmLangListener)listener).enterExpressaoAritReal(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CmzmLangListener ) ((CmzmLangListener)listener).exitExpressaoAritReal(this);
+		}
 	}
 
 	public final ExpressaoAritRealContext expressaoAritReal() throws RecognitionException {
@@ -1239,7 +1359,7 @@ public class CmzmLangParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001\u0017\u00ce\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001"+
+		"\u0004\u0001\u0018\u00ce\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001"+
 		"\u0002\u0002\u0007\u0002\u0002\u0003\u0007\u0003\u0002\u0004\u0007\u0004"+
 		"\u0002\u0005\u0007\u0005\u0002\u0006\u0007\u0006\u0002\u0007\u0007\u0007"+
 		"\u0002\b\u0007\b\u0002\t\u0007\t\u0002\n\u0007\n\u0002\u000b\u0007\u000b"+

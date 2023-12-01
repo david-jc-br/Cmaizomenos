@@ -1,6 +1,6 @@
 /**
  * Projeto final da Disciplina Compiladores - Linguagem C+-
- * @author David, Gabriela, Leonardo, Luiz H, 
+ * @author David, Gabriela, Leonardo, Luiz H
  * @version 1.0
  */
 import org.antlr.v4.runtime.CharStream;
