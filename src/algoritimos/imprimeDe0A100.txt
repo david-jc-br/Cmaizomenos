@@ -1,0 +1,7 @@
+
+
+mostraissu("Imprime um numero de 0 a 10);
+
+uai(cont <= limite){
+    mostraissu(cont);
+}

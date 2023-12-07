@@ -1,21 +1,12 @@
-:DEC
-
-    Int cont;
-    Int limite;
-
-:PRG
-
-    Int cont = 0;
-    Int limite = 100;
-
-    uai(cont <= limite) {
-        Mostraissu("Numeros pareres de 0 a 100\n");
-
-        DE((cont / 2) == 0){
-            Mostraissu(cont);
-            Mostraissu(" \n");
+trem vazio (){
+    /*Este é um comentário*/
+    mostraissu("Iniciando programa");
+    Int :: cont =14;
+        si(cont > 5){
+            mostraissu("Cont maior que 5");           
+        } 
+        sinaum{
+            mostraissu("Cont maior que 5");
         }
-
-        cont = cont + 2;
-    }
-    
+    cont = 10;
+}

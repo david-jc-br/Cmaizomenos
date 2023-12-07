@@ -1,4 +1,4 @@
-// Generated from ./CmzmLang.g4 by ANTLR 4.13.1
+// Generated from CmzmLang.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -6,6 +6,36 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  * {@link CmzmLangParser}.
  */
 public interface CmzmLangListener extends ParseTreeListener {
+	/**
+	 * Enter a parse tree produced by {@link CmzmLangParser#procedimento}.
+	 * @param ctx the parse tree
+	 */
+	void enterProcedimento(CmzmLangParser.ProcedimentoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CmzmLangParser#procedimento}.
+	 * @param ctx the parse tree
+	 */
+	void exitProcedimento(CmzmLangParser.ProcedimentoContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link CmzmLangParser#funcao}.
+	 * @param ctx the parse tree
+	 */
+	void enterFuncao(CmzmLangParser.FuncaoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CmzmLangParser#funcao}.
+	 * @param ctx the parse tree
+	 */
+	void exitFuncao(CmzmLangParser.FuncaoContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link CmzmLangParser#parametros}.
+	 * @param ctx the parse tree
+	 */
+	void enterParametros(CmzmLangParser.ParametrosContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CmzmLangParser#parametros}.
+	 * @param ctx the parse tree
+	 */
+	void exitParametros(CmzmLangParser.ParametrosContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link CmzmLangParser#comando}.
 	 * @param ctx the parse tree
@@ -137,6 +167,16 @@ public interface CmzmLangListener extends ParseTreeListener {
 	 */
 	void exitAtribuicaoReal(CmzmLangParser.AtribuicaoRealContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link CmzmLangParser#mostraissu}.
+	 * @param ctx the parse tree
+	 */
+	void enterMostraissu(CmzmLangParser.MostraissuContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CmzmLangParser#mostraissu}.
+	 * @param ctx the parse tree
+	 */
+	void exitMostraissu(CmzmLangParser.MostraissuContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link CmzmLangParser#expressaoAritInt}.
 	 * @param ctx the parse tree
 	 */
@@ -156,4 +196,14 @@ public interface CmzmLangListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitExpressaoAritReal(CmzmLangParser.ExpressaoAritRealContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link CmzmLangParser#expressaoAritString}.
+	 * @param ctx the parse tree
+	 */
+	void enterExpressaoAritString(CmzmLangParser.ExpressaoAritStringContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CmzmLangParser#expressaoAritString}.
+	 * @param ctx the parse tree
+	 */
+	void exitExpressaoAritString(CmzmLangParser.ExpressaoAritStringContext ctx);
 }

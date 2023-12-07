@@ -1,0 +1,126 @@
+Token: [@-1,0:3='trem',<1>,1:0]
+    Lexema: trem
+    Classe: 'trem'
+Token: [@-1,5:9='vazio',<2>,1:5]
+    Lexema: vazio
+    Classe: 'vazio'
+Token: [@-1,11:11='(',<19>,1:11]
+    Lexema: (
+    Classe: '('
+Token: [@-1,12:12=')',<20>,1:12]
+    Lexema: )
+    Classe: ')'
+Token: [@-1,13:13='{',<17>,1:13]
+    Lexema: {
+    Classe: '{'
+Token: [@-1,50:59='mostraissu',<9>,3:4]
+    Lexema: mostraissu
+    Classe: 'mostraissu'
+Token: [@-1,60:60='(',<19>,3:14]
+    Lexema: (
+    Classe: '('
+Token: [@-1,61:80='"Iniciando programa"',<27>,3:15]
+    Lexema: "Iniciando programa"
+    Classe: LString
+Token: [@-1,81:81=')',<20>,3:35]
+    Lexema: )
+    Classe: ')'
+Token: [@-1,82:82=';',<5>,3:36]
+    Lexema: ;
+    Classe: ';'
+Token: [@-1,89:91='Int',<13>,4:4]
+    Lexema: Int
+    Classe: Tipo
+Token: [@-1,93:94='::',<29>,4:8]
+    Lexema: ::
+    Classe: '::'
+Token: [@-1,96:99='cont',<24>,4:11]
+    Lexema: cont
+    Classe: Var
+Token: [@-1,101:101='=',<15>,4:16]
+    Lexema: =
+    Classe: '='
+Token: [@-1,102:103='14',<25>,4:17]
+    Lexema: 14
+    Classe: NInt
+Token: [@-1,104:104=';',<5>,4:19]
+    Lexema: ;
+    Classe: ';'
+Token: [@-1,115:116='si',<6>,5:8]
+    Lexema: si
+    Classe: 'si'
+Token: [@-1,117:117='(',<19>,5:10]
+    Lexema: (
+    Classe: '('
+Token: [@-1,118:121='cont',<24>,5:11]
+    Lexema: cont
+    Classe: Var
+Token: [@-1,123:123='>',<16>,5:16]
+    Lexema: >
+    Classe: OpRel
+Token: [@-1,125:125='5',<25>,5:18]
+    Lexema: 5
+    Classe: NInt
+Token: [@-1,126:126=')',<20>,5:19]
+    Lexema: )
+    Classe: ')'
+Token: [@-1,127:127='{',<17>,5:20]
+    Lexema: {
+    Classe: '{'
+Token: [@-1,142:151='mostraissu',<9>,6:12]
+    Lexema: mostraissu
+    Classe: 'mostraissu'
+Token: [@-1,152:152='(',<19>,6:22]
+    Lexema: (
+    Classe: '('
+Token: [@-1,153:170='"Cont maior que 5"',<27>,6:23]
+    Lexema: "Cont maior que 5"
+    Classe: LString
+Token: [@-1,171:171=')',<20>,6:41]
+    Lexema: )
+    Classe: ')'
+Token: [@-1,172:172=';',<5>,6:42]
+    Lexema: ;
+    Classe: ';'
+Token: [@-1,194:194='}',<18>,7:8]
+    Lexema: }
+    Classe: '}'
+Token: [@-1,206:211='sinaum',<7>,8:8]
+    Lexema: sinaum
+    Classe: 'sinaum'
+Token: [@-1,212:212='{',<17>,8:14]
+    Lexema: {
+    Classe: '{'
+Token: [@-1,227:236='mostraissu',<9>,9:12]
+    Lexema: mostraissu
+    Classe: 'mostraissu'
+Token: [@-1,237:237='(',<19>,9:22]
+    Lexema: (
+    Classe: '('
+Token: [@-1,238:255='"Cont maior que 5"',<27>,9:23]
+    Lexema: "Cont maior que 5"
+    Classe: LString
+Token: [@-1,256:256=')',<20>,9:41]
+    Lexema: )
+    Classe: ')'
+Token: [@-1,257:257=';',<5>,9:42]
+    Lexema: ;
+    Classe: ';'
+Token: [@-1,268:268='}',<18>,10:8]
+    Lexema: }
+    Classe: '}'
+Token: [@-1,275:278='cont',<24>,11:4]
+    Lexema: cont
+    Classe: Var
+Token: [@-1,280:280='=',<15>,11:9]
+    Lexema: =
+    Classe: '='
+Token: [@-1,282:283='10',<25>,11:11]
+    Lexema: 10
+    Classe: NInt
+Token: [@-1,284:284=';',<5>,11:13]
+    Lexema: ;
+    Classe: ';'
+Token: [@-1,287:287='}',<18>,12:0]
+    Lexema: }
+    Classe: '}'

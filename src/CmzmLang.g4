@@ -5,50 +5,54 @@ fragment DIGITO: [0-9];
 fragment LETRA: [a-zA-Z];
 fragment ALFANUM: [a-zA-Z0-9];
 
-PalavraChave: 'DEC' | 'PROG' | 'si' | 'sinaum' | 'uai' | 'trem' | 'Proc' | 'Vorta' | 'Mostraissu' | 'Leissu' | ';';
+
+WS: [ \r\t\n]+ -> skip;
+PalavraChave: 'si' | 'sinaum' | 'uai' | 'trem' | 'vazio' | 'vorta' | 'mostraissu' | 'leissu' | ';';
 Tipo: 'Int' | 'Real' | 'Bool' | 'String';
-OpArit: '+' | '-' | '*' | '/';
+OpArit: '+' | '-' | '*' | '/' ;
 Atribuicao: '=';
 OpRel: '>' | '<' | '>=' | '<=' | '==' | '!=';
 AbreChave: '{';
 FechaChave: '}';
 AbrePar: '(';
 FechaPar: ')';
-AbreComentario: '/*';
-FechaComentario: '*/';
+Comentario: '/*' .*? '*/' -> skip;
 OpBoolE: '&&';
 OpBoolOu: '||';
-WS: [ \r\t\n]+ -> skip;
 Var: LETRA ALFANUM*;
 NInt: DIGITO+;
 NReal: DIGITO+ '.' DIGITO+;
-LString: '"' ALFANUM+ '"';
+LString: '"' (LETRA | DIGITO | ' ' | '!' | '@' | '#' | '$' | '%' | '&' | '~')* '"';
 ErrorChar: .;
+Delimitador: '::';
+
+procedimento: 'trem' 'vazio' AbrePar parametros? FechaPar AbreChave comando* FechaChave;
+
+funcao: 'trem' Tipo Delimitador Var AbrePar parametros? FechaPar AbreChave comando* 'vorta' expressao FechaChave;
+
+parametros: Tipo Delimitador Var (',' Tipo Delimitador Var)*;
 
 comando: expressao comando | expressao;
-expressao: declaracaoVar | condicional | repeticao | atribuicao;
+expressao: declaracaoVar | condicional | repeticao | atribuicao | mostraissu;
 
-declaracaoVar: Tipo Var ';';
+declaracaoVar: Tipo Delimitador Var ';' | Tipo Delimitador atribuicao ;
 
-// Expressões Condicionais (si | si sinaum)
-condicional: 'si' AbrePar expressaoLogica FechaPar AbreChave expressao FechaChave ( 'sinaum' AbreChave expressao FechaChave)?;
+condicional: 'si' AbrePar expressaoLogica FechaPar AbreChave expressao+ FechaChave ( 'sinaum' AbreChave expressao+ FechaChave);
 
-// Repetição (Uai)
-repeticao: 'uai' AbrePar expressaoLogica FechaPar AbreChave expressao FechaChave;
+repeticao: 'uai' AbrePar expressaoLogica FechaPar AbreChave expressao+ FechaChave;
 
-// Expressões Lógicas
 expressaoLogica: Var OpRel Var | expressaoLogicaString | expressaoLogicaInt | expressaoLogicaReal;
 expressaoLogicaString: Var OpRel LString | LString OpRel Var | LString OpRel LString;
 expressaoLogicaInt: Var OpRel NInt | NInt OpRel Var | NInt OpRel NInt;
 expressaoLogicaReal: Var OpRel NReal | NReal OpRel Var | NReal OpRel NReal;
 
-// Atribuição
-atribuicao: atribuicaoString | atribuicaoInt | atribuicaoReal;
-atribuicaoString: Var Atribuicao LString ';';
+atribuicao: atribuicaoString | atribuicaoInt | atribuicaoReal ;
+atribuicaoString: Var Atribuicao (LString | expressaoAritString) ';';
 atribuicaoInt: Var Atribuicao (NInt | expressaoAritInt) ';';
 atribuicaoReal: Var Atribuicao (NReal | expressaoAritReal) ';';
 
-//Expressoes Aritimeticas
+mostraissu: 'mostraissu' AbrePar (LString | Var | WS | NInt |NReal)+ FechaPar ';';
+
 expressaoAritInt:
   NInt OpArit NInt
   | Var OpArit NInt
@@ -71,10 +75,13 @@ expressaoAritReal:
   | expressaoAritReal OpArit NReal
   | expressaoAritReal OpArit expressaoAritReal;
 
-
-// Adicione a regra para tratar variáveis não declaradas
-ErroVariavelNaoDeclarada: Var Atribuicao {
-    String variavel = getText();
-    System.err.println("Erro léxico: Tentativa de atribuir valor a uma variável não declarada: '" + variavel + "' na posição " + getCharPositionInLine());
-    // Aqui, você pode adicionar lógica adicional, como lançar uma exceção, se desejar
-};
+expressaoAritString:
+  LString '+' LString
+  | Var '+' LString
+  | LString '+' Var
+  | Var '+' Var
+  | Var '+' expressaoAritString
+  | LString '+' expressaoAritString
+  | expressaoAritString '+' Var
+  | expressaoAritString '+' LString
+  | expressaoAritString '+' expressaoAritString;
